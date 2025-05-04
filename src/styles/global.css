@@ -28,7 +28,6 @@ body {
 
 .block {
   max-width: 62rem;
-  background-color: #fafafa;
   min-height: 100vh;
   padding: 1.5rem;
 }
@@ -63,7 +62,7 @@ em {
 }
 
 a {
-  color: #008eff;
+  color: #0078d7;
   text-decoration: none;
 }
 
@@ -149,12 +148,5 @@ hr.sm {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@media (min-width: 768px) {
-  .block {
-    border-left: 1px solid #cacaca;
-    border-right: 1px solid #cacaca;
   }
 }
