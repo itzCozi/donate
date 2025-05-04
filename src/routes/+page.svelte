@@ -34,7 +34,7 @@
     </div>
   {/if}
   <div class="mx-auto block flex flex-col gap-3">
-    <div class="mx-auto flex-1 flex flex-col gap-3 p-4">
+    <div class="flex-1 flex flex-col gap-3 p-4">
       <h1
         id="how-to"
         class="flex flex-row gap-2 justify-center items-center relative">
@@ -99,30 +99,28 @@
         </p>
       </div>
 
-      <div class="flex justify-between items-center">
+      <div class="flex justify-between items-center gap-2 mb-2 mt-1">
         <div class="flex flex-col">
-          <div class="flex flex-row gap-2 items-center">
-            <h2>Bitcoin Address</h2>
-          </div>
+          <h2 class="text-center">Bitcoin Address</h2>
           <button
             on:click={() => copyToClipboard("bc1qzae405taw3epjugns3anhh8urvaefn2j6xue34")}
-            class="flex flex-row gap-2 items-center text-sm hover:text-primary transition duration-200">
-            <p class="text-sm">bc1qzae405taw3epjugns3anhh8urvaefn2j6xue34</p>
+            title="Copy Bitcoin Address"
+            class="flex flex-row gap-2 items-center text-sm hover:text-primary transition duration-200 break-all">
+            bc1qzae405taw3epjugns3anhh8urvaefn2j6xue34
           </button>
         </div>
         <div class="flex flex-col">
-          <div class="flex flex-row gap-2 items-center">
-            <h2>Ethereum Address</h2>
-          </div>
+          <h2 class="text-center">Ethereum Address</h2>
           <button
             on:click={() => copyToClipboard("0x179759aF5Df9419EE3C0d13D3Ecbf44ccbF66055")}
-            class="flex flex-row gap-2 items-center text-sm hover:text-primary transition duration-200">
-            <p class="text-sm">0x179759aF5Df9419EE3C0d13D3Ecbf44ccbF66055</p>
+            title="Copy Ethereum Address"
+            class="flex flex-row gap-2 items-center text-sm hover:text-primary transition duration-200 break-all">
+            0x179759aF5Df9419EE3C0d13D3Ecbf44ccbF66055
           </button>
         </div>
       </div>
 
-      <div class="mt-3 p-4 border border-[#cacaca]">
+      <div class="p-4 border border-[#cacaca]">
         <h3>Thank You!</h3>
         <p class="text-sm">
           Your support makes it possible to continue developing these free, open-source projects.
