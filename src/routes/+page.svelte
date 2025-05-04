@@ -77,7 +77,7 @@
           </li>
           <li>
             <a
-              href="donate.cozi.lol"
+              href="https://donate.cozi.lol"
               rel=""
               target="_blank">Stremio Guide</a>
           </li>

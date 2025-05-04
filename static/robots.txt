@@ -5,4 +5,4 @@ Disallow: /types/
 Disallow: /src/
 Allow: /
 
-Sitemap: donate.cozi.lol/sitemap.xml
+Sitemap: https://bye.undi.rest/sitemap.xml
