@@ -44,7 +44,7 @@
       <p>
         Hello, first things first, I don't need any donations. I build projects for the community
         for fun and look to get nothing in return. But if you want to support me, you can do so by
-        donating. However, I only accept crypto donations, I don't have any other payment methods
+        donating. However, I only accept crypto donations, I don't take any other payment methods
         unfortunately.
       </p>
 
@@ -77,7 +77,7 @@
           </li>
           <li>
             <a
-              href="https://donate.cozi.lol"
+              href="https://bye.undi.rest"
               rel=""
               target="_blank">Stremio Guide</a>
           </li>
