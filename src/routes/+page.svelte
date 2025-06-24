@@ -1,13 +1,16 @@
 <script>
-  import { TableOfContents } from "lucide-svelte";
-  import { TriangleAlert } from "lucide-svelte";
-  import { ChevronRight } from "lucide-svelte";
   import { CopyCheck } from "lucide-svelte";
-  import { BadgeInfo } from "lucide-svelte";
-  import { Share } from "lucide-svelte";
-  import { Info } from "lucide-svelte";
 
   let isPopupVisible = false;
+
+  const btcAddress = "bc1qzae405taw3epjugns3anhh8urvaefn2j6xue34";
+  const ethAddress = "0x179759aF5Df9419EE3C0d13D3Ecbf44ccbF66055";
+  const xmrAddress =
+    "4AUzCAtTAPa6DGV9NkyHHf7fhrayoN7o5XSCeQfhv4AiMdDkNCMjcsbVs49dThJtsPHt4bR2qupTUWyf44vScYqLCkueWej";
+
+  function truncateAddress(address) {
+    return address.length > 42 ? address.substring(0, 42) + "..." : address;
+  }
 
   function copyToClipboard(textToCopy) {
     navigator.clipboard
@@ -33,8 +36,8 @@
       </div>
     </div>
   {/if}
-  <div class="mx-auto block flex flex-col gap-3">
-    <div class="flex-1 flex flex-col gap-3 p-4">
+  <div class="mx-auto block">
+    <div class="flex-1 flex flex-col gap-3 p-3">
       <h1
         id="how-to"
         class="flex flex-row gap-2 justify-center items-center relative">
@@ -55,7 +58,13 @@
             <a
               href="https://sub.wyzie.ru"
               rel=""
-              target="_blank">Wyzie Subs</a>
+              target="_blank">Wyzie Sub(title)s</a>
+          </li>
+          <li>
+            <a
+              href="https://wyzie.ru"
+              rel=""
+              target="_blank">The Wyzie API</a>
           </li>
           <li>
             <a
@@ -103,19 +112,28 @@
         <div class="flex flex-col">
           <h2 class="text-center">Bitcoin Address</h2>
           <button
-            on:click={() => copyToClipboard("bc1qzae405taw3epjugns3anhh8urvaefn2j6xue34")}
+            on:click={() => copyToClipboard(btcAddress)}
             title="Copy Bitcoin Address"
             class="flex flex-row gap-2 items-center text-sm hover:text-primary transition duration-200 break-all">
-            bc1qzae405taw3epjugns3anhh8urvaefn2j6xue34
+            {truncateAddress(btcAddress)}
           </button>
         </div>
         <div class="flex flex-col">
           <h2 class="text-center">Ethereum Address</h2>
           <button
-            on:click={() => copyToClipboard("0x179759aF5Df9419EE3C0d13D3Ecbf44ccbF66055")}
+            on:click={() => copyToClipboard(ethAddress)}
             title="Copy Ethereum Address"
             class="flex flex-row gap-2 items-center text-sm hover:text-primary transition duration-200 break-all">
-            0x179759aF5Df9419EE3C0d13D3Ecbf44ccbF66055
+            {truncateAddress(ethAddress)}
+          </button>
+        </div>
+        <div class="flex flex-col">
+          <h2 class="text-center">Monero Address</h2>
+          <button
+            on:click={() => copyToClipboard(xmrAddress)}
+            title="Copy Monero Address"
+            class="flex flex-row gap-2 items-center text-sm hover:text-primary transition duration-200 break-all">
+            {truncateAddress(xmrAddress)}
           </button>
         </div>
       </div>
