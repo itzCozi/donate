@@ -10,11 +10,6 @@
   const xmrAddress =
     "4AUzCAtTAPa6DGV9NkyHHf7fhrayoN7o5XSCeQfhv4AiMdDkNCMjcsbVs49dThJtsPHt4bR2qupTUWyf44vScYqLCkueWej";
 
-  function isNightTime() {
-    const hour = new Date().getHours();
-    return hour >= 20 || hour < 6;
-  }
-
   function truncateAddress(address) {
     return address.length > 42 ? address.substring(0, 42) + "..." : address;
   }
@@ -43,7 +38,7 @@
   function updateDarkMode() {
     if (darkMode) {
       document.documentElement.classList.add("dark");
-      document.documentElement.style.setProperty("--background-color", "#121212");
+      document.documentElement.style.setProperty("--background-color", "#1e1e1e");
     } else {
       document.documentElement.classList.remove("dark");
       document.documentElement.style.setProperty("--background-color", "#ffffff");
@@ -52,7 +47,7 @@
 
   onMount(() => {
     if (typeof window !== "undefined") {
-      darkMode = isNightTime();
+      darkMode = false;
       updateDarkMode();
     }
   });
@@ -64,7 +59,7 @@
   <button
     class="fixed top-4 right-4 p-3 rounded-full hover:scale-105 transition duration-200"
     on:click={toggleDarkMode}
-    title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}>
+    title={darkMode ? "Light Mode" : "Dark Mode"}>
     {#if darkMode}
       <Sun class="h-6 w-6" />
     {:else}
@@ -89,10 +84,11 @@
       </h1>
 
       <p class="dark:text-gray-300">
-        Hello, first things first, I don't expect any donations. I build projects for the community
-        for fun and look to get nothing in return. But if you want to support me and keep these
-        projects running, you can do so by donating. However, I only accept crypto donations; I
-        don't accept any other payment methods unfortunately.
+        Hello! This page is where you can support BadDeveloper through donations. I create these
+        projects because I genuinely enjoy building stuff for the community.
+        If you find value in what I do and want to help keep these projects alive and
+        running, your donations make all the difference (literally). I currently only accept
+        crypto donations; no other payment methods are available at the moment, unfortunately.
       </p>
 
       <div>
