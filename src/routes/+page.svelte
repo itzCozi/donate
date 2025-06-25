@@ -10,6 +10,11 @@
   const xmrAddress =
     "4AUzCAtTAPa6DGV9NkyHHf7fhrayoN7o5XSCeQfhv4AiMdDkNCMjcsbVs49dThJtsPHt4bR2qupTUWyf44vScYqLCkueWej";
 
+  function isNightTime() {
+    const hour = new Date().getHours();
+    return hour >= 20 || hour < 6;
+  }
+
   function truncateAddress(address) {
     return address.length > 42 ? address.substring(0, 42) + "..." : address;
   }
@@ -47,6 +52,7 @@
 
   onMount(() => {
     if (typeof window !== "undefined") {
+      darkMode = isNightTime();
       updateDarkMode();
     }
   });
