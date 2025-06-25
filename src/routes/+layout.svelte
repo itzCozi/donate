@@ -7,4 +7,15 @@
   let { children }: Props = $props();
 </script>
 
-{@render children?.()}
+<style>
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+  }
+</style>
+
+<div class="app">
+  {@render children?.()}
+</div>

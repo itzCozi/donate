@@ -1,7 +1,9 @@
 <script>
-  import { CopyCheck } from "lucide-svelte";
+  import { CopyCheck, Moon, Sun } from "lucide-svelte";
+  import { onMount } from "svelte";
 
   let isPopupVisible = false;
+  let darkMode = false;
 
   const btcAddress = "bc1qzae405taw3epjugns3anhh8urvaefn2j6xue34";
   const ethAddress = "0x179759aF5Df9419EE3C0d13D3Ecbf44ccbF66055";
@@ -25,9 +27,45 @@
         console.error("Failed to copy text: ", err);
       });
   }
+
+  function toggleDarkMode() {
+    darkMode = !darkMode;
+    if (typeof window !== "undefined") {
+      updateDarkMode();
+    }
+  }
+
+  function updateDarkMode() {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      document.documentElement.style.setProperty("--background-color", "#121212");
+    } else {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.style.setProperty("--background-color", "#ffffff");
+    }
+  }
+
+  onMount(() => {
+    if (typeof window !== "undefined") {
+      updateDarkMode();
+    }
+  });
 </script>
 
-<div class="items-center justify-center">
+<div
+  class="items-center justify-center"
+  class:dark={darkMode}>
+  <button
+    class="fixed top-4 right-4 p-3 rounded-full hover:scale-105 transition duration-200"
+    on:click={toggleDarkMode}
+    title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}>
+    {#if darkMode}
+      <Sun class="h-6 w-6" />
+    {:else}
+      <Moon class="h-6 w-6" />
+    {/if}
+  </button>
+
   {#if isPopupVisible}
     <div class="popup">
       <div class="flex items-center justify-center flex-row gap-2">
@@ -44,16 +82,16 @@
         Donations
       </h1>
 
-      <p>
-        Hello, first things first, I don't need any donations. I build projects for the community
-        for fun and look to get nothing in return. But if you want to support me, you can do so by
-        donating. However, I only accept crypto donations, I don't take any other payment methods
-        unfortunately.
+      <p class="dark:text-gray-300">
+        Hello, first things first, I don't expect any donations. I build projects for the community
+        for fun and look to get nothing in return. But if you want to support me and keep these
+        projects running, you can do so by donating. However, I only accept crypto donations; I
+        don't accept any other payment methods unfortunately.
       </p>
 
       <div>
-        <h3>By donating you are supporting:</h3>
-        <ul>
+        <h3 class="dark:text-gray-200">By donating you are supporting:</h3>
+        <ul class="dark:text-gray-300">
           <li>
             <a
               href="https://sub.wyzie.ru"
@@ -103,7 +141,7 @@
               target="_blank">365 Radio</a>
           </li>
         </ul>
-        <p class="text-xs text-type-dimmed">
+        <p class="text-xs text-type-dimmed dark:text-gray-400">
           All of these projects are open source and free to use.
         </p>
       </div>
@@ -111,36 +149,45 @@
       <div class="flex justify-between items-center gap-2 mb-2 mt-1">
         <div class="flex flex-col">
           <h2 class="text-center">Bitcoin Address</h2>
-          <button
+          <div
+            role="button"
+            tabindex="0"
             on:click={() => copyToClipboard(btcAddress)}
+            on:keydown={(e) => e.key === "Enter" && copyToClipboard(btcAddress)}
             title="Copy Bitcoin Address"
-            class="flex flex-row gap-2 items-center text-sm hover:text-primary transition duration-200 break-all">
+            class="flex flex-row gap-2 items-center text-sm hover:text-blue-500 dark:hover:text-blue-400 transition duration-200 break-all cursor-pointer">
             {truncateAddress(btcAddress)}
-          </button>
+          </div>
         </div>
         <div class="flex flex-col">
           <h2 class="text-center">Ethereum Address</h2>
-          <button
+          <div
+            role="button"
+            tabindex="0"
             on:click={() => copyToClipboard(ethAddress)}
+            on:keydown={(e) => e.key === "Enter" && copyToClipboard(ethAddress)}
             title="Copy Ethereum Address"
-            class="flex flex-row gap-2 items-center text-sm hover:text-primary transition duration-200 break-all">
+            class="flex flex-row gap-2 items-center text-sm hover:text-blue-500 dark:hover:text-blue-400 transition duration-200 break-all cursor-pointer">
             {truncateAddress(ethAddress)}
-          </button>
+          </div>
         </div>
         <div class="flex flex-col">
           <h2 class="text-center">Monero Address</h2>
-          <button
+          <div
+            role="button"
+            tabindex="0"
             on:click={() => copyToClipboard(xmrAddress)}
+            on:keydown={(e) => e.key === "Enter" && copyToClipboard(xmrAddress)}
             title="Copy Monero Address"
-            class="flex flex-row gap-2 items-center text-sm hover:text-primary transition duration-200 break-all">
+            class="flex flex-row gap-2 items-center text-sm hover:text-blue-500 dark:hover:text-blue-400 transition duration-200 break-all cursor-pointer">
             {truncateAddress(xmrAddress)}
-          </button>
+          </div>
         </div>
       </div>
 
-      <div class="p-4 border border-[#cacaca]">
+      <div class="p-4 border border-[var(--border-color)] dark:border-opacity-70">
         <h3>Thank You!</h3>
-        <p class="text-sm">
+        <p class="text-sm dark:text-gray-300">
           Your support makes it possible to continue developing these free, open-source projects.
           Every donation, no matter how small, is really deeply appreciated and helps keep these
           services running and up-to-date.
@@ -148,14 +195,14 @@
       </div>
     </div>
 
-    <footer class="text-center text-type-dimmed text-sm mt-auto py-4">
+    <footer class="text-center text-type-dimmed text-sm mt-auto py-4 dark:text-gray-400">
       <p class="flex flex-row justify-center items-center gap-2">
         <!-- svelte-ignore a11y_consider_explicit_label -->
         <a
           href="https://github.com/itzcozi"
           target="_blank"
           rel="noopener noreferrer"
-          class="hover:scale-105 text-dark transition duration-200"
+          class="hover:scale-105 text-dark dark:text-gray-300 transition duration-200"
           title="Github">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +216,7 @@
         <!-- svelte-ignore a11y_consider_explicit_label -->
         <a
           href="https://x.com/sudoflix"
-          class="hover:scale-105 text-dark transition duration-200"
+          class="hover:scale-105 text-dark dark:text-gray-300 transition duration-200"
           title="Twitter">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -183,7 +230,7 @@
         <!-- svelte-ignore a11y_consider_explicit_label -->
         <a
           href="mailto:dev@wyzie.ru"
-          class="hover:scale-105 text-dark transition duration-200"
+          class="hover:scale-105 text-dark dark:text-gray-300 transition duration-200"
           title="Email">
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -14,16 +14,33 @@
 
 :root {
   --background-color: #ffffff;
+  --text-color: #404040;
+  --heading-color: #151515;
+  --border-color: #cacaca;
+  --popup-bg: #fafafa;
+  --link-color: #0078d7;
   font-family: "open sans";
+}
+
+:root.dark {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --heading-color: #f0f0f0;
+  --border-color: #454545;
+  --popup-bg: #1e1e1e;
+  --link-color: #3b9eff;
 }
 
 html,
 body {
   scroll-behavior: smooth;
   background-color: var(--background-color);
-  color: #404040;
+  color: var(--text-color);
   font-family: "open sans";
   font-size: 16.25px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .block {
@@ -36,7 +53,7 @@ h1 {
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
-  color: #151515;
+  color: var(--heading-color);
   margin-top: -0.3rem;
   margin-bottom: 0.7rem;
 }
@@ -44,17 +61,17 @@ h1 {
 h2 {
   font-size: 1.25rem;
   font-weight: bold;
-  color: #151515;
+  color: var(--heading-color);
 }
 
 h3 {
   font-size: 1.05rem;
   font-weight: bold;
-  color: #151515;
+  color: var(--heading-color);
 }
 
 strong {
-  color: #202020;
+  color: var(--heading-color);
 }
 
 em {
@@ -62,7 +79,7 @@ em {
 }
 
 a {
-  color: #0078d7;
+  color: var(--link-color);
   text-decoration: none;
 }
 
@@ -108,6 +125,11 @@ code {
   padding: 0.25rem 0.3rem 0.1rem;
 }
 
+.dark code {
+  background-color: #404040;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
 blockquote {
   margin-block: 1rem;
   padding: 0.5rem 0.8rem;
@@ -119,13 +141,13 @@ hr {
   border: 0;
   height: 1px;
   margin-block: 1rem;
-  background: #cacaca;
+  background: var(--border-color);
 }
 
 hr.sm {
   border: 0;
   height: 1px;
-  background: #cacaca;
+  background: var(--border-color);
   margin-block: 0.5rem;
 }
 
@@ -133,8 +155,8 @@ hr.sm {
   position: fixed;
   bottom: 0.75rem;
   right: 0.75rem;
-  background-color: #fafafa;
-  border: 1px solid #cacaca;
+  background-color: var(--popup-bg);
+  border: 1px solid var(--border-color);
   padding: 0.5rem;
   z-index: 1000;
   animation: fadeIn 0.3s ease-in-out;
