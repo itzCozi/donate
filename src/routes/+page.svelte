@@ -76,76 +76,87 @@
     </div>
   {/if}
   <div class="mx-auto block">
-    <div class="flex-1 flex flex-col gap-3 p-3">
+    <div class="flex flex-col items-center justify-center gap-8">
       <h1
         id="how-to"
-        class="flex flex-row gap-2 justify-center items-center relative">
+        class="flex flex-row gap-2 justify-center items-center relative mt-3">
         Donations
       </h1>
+      <div class="flex flex-col md:flex-row items-center">
+        <div>
+          <p class="dark:text-gray-300 mb-8">
+            Hello! This page is where you can support BadDeveloper through donations. I create these
+            projects because I genuinely enjoy building stuff for the community. If you find value
+            in what I do and want to help keep these projects alive and running, your donations make
+            all the difference (literally). I currently only accept crypto donations; no other
+            payment methods are available at the moment, unfortunately.
+          </p>
 
-      <p class="dark:text-gray-300">
-        Hello! This page is where you can support BadDeveloper through donations. I create these
-        projects because I genuinely enjoy building stuff for the community.
-        If you find value in what I do and want to help keep these projects alive and
-        running, your donations make all the difference (literally). I currently only accept
-        crypto donations; no other payment methods are available at the moment, unfortunately.
-      </p>
-
-      <div>
-        <h3 class="dark:text-gray-200">By donating you are supporting:</h3>
-        <ul class="dark:text-gray-300">
-          <li>
-            <a
-              href="https://sub.wyzie.ru"
-              rel=""
-              target="_blank">Wyzie Sub(title)s</a>
-          </li>
-          <li>
-            <a
-              href="https://wyzie.ru"
-              rel=""
-              target="_blank">The Wyzie API</a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/sussy-code"
-              rel=""
-              target="_blank">Sudo-Flix</a>
-          </li>
-          <li>
-            <a
-              href="https://bookracy.org"
-              rel=""
-              target="_blank">Bookracy</a>
-          </li>
-          <li>
-            <a
-              href="https://markd.it"
-              rel=""
-              target="_blank">Markd.it</a>
-          </li>
-          <li>
-            <a
-              href="https://bye.undi.rest"
-              rel=""
-              target="_blank">Stremio Guide</a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/itzcozi/i6.shark"
-              rel=""
-              target="_blank">i6.shark</a>
-          </li>
-          <li>
-            <a
-              href="https://365.ilysm.nl"
-              rel=""
-              target="_blank">365 Radio</a>
-          </li>
-        </ul>
-        <p class="text-xs text-type-dimmed dark:text-gray-400">
-          All of these projects are open source and free to use.
-        </p>
+          <h3 class="dark:text-gray-200 mb-2">By donating you are supporting:</h3>
+          <ul class="dark:text-gray-300">
+            <li>
+              <a
+                href="https://sub.wyzie.ru"
+                rel=""
+                target="_blank">Wyzie Sub(title)s</a>
+            </li>
+            <li>
+              <a
+                href="https://wyzie.ru"
+                rel=""
+                target="_blank">The Wyzie API</a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/sussy-code"
+                rel=""
+                target="_blank">Sudo-Flix</a>
+            </li>
+            <li>
+              <a
+                href="https://bookracy.org"
+                rel=""
+                target="_blank">Bookracy</a>
+            </li>
+            <li>
+              <a
+                href="https://markd.it"
+                rel=""
+                target="_blank">Markd.it</a>
+            </li>
+            <li>
+              <a
+                href="https://bye.undi.rest"
+                rel=""
+                target="_blank">Stremio Guide</a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/itzcozi/i6.shark"
+                rel=""
+                target="_blank">i6.shark</a>
+            </li>
+            <li>
+              <a
+                href="https://365.ilysm.nl"
+                rel=""
+                target="_blank">365 Radio</a>
+            </li>
+          </ul>
+          <p class="text-xs text-type-dimmed dark:text-gray-400 mt-1">
+            All of these projects are open source and free to use.
+          </p>
+        </div>
+        <iframe
+          src="https://nowpayments.io/embeds/donation-widget?api_key=A753W50-QK84HK5-G5WPFT3-4BJJHMQ"
+          width="346"
+          height="623"
+          frameborder="0"
+          scrolling="no"
+          title="NowPayments Donation Widget"
+          style="overflow-y: hidden;">
+          Can't load widget
+        </iframe>
       </div>
 
       <div class="flex justify-between items-center gap-2 mb-2 mt-1">
