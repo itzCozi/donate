@@ -82,8 +82,9 @@
         class="flex flex-row gap-2 justify-center items-center relative mt-3">
         Donations
       </h1>
-      <div class="flex flex-col md:flex-row items-center">
-        <div>
+      <div
+        class="flex flex-col md:flex-row items-center md:items-start gap-8 w-full overflow-hidden">
+        <div class="flex-1 min-w-0">
           <p class="dark:text-gray-300 mb-8">
             Hello! This page is where you can support BadDeveloper through donations. I create these
             projects because I genuinely enjoy building stuff for the community. If you find value
@@ -154,6 +155,7 @@
           frameborder="0"
           scrolling="no"
           title="NowPayments Donation Widget"
+          class="flex-shrink-0 w-full max-w-[346px] rounded-lg"
           style="overflow-y: hidden;">
           Can't load widget
         </iframe>
