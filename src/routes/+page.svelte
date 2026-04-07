@@ -127,7 +127,7 @@
             </li>
             <li>
               <a
-                href="https://bye.undi.rest"
+                href="https://stremio.ar0.eu"
                 rel=""
                 target="_blank">Stremio Guide</a>
             </li>
