@@ -89,9 +89,17 @@
             Hello! This page is where you can support BadDeveloper through donations. I create these
             projects because I genuinely enjoy building stuff for the community. If you find value
             in what I do and want to help keep these projects alive and running, your donations make
-            all the difference (literally). I currently only accept crypto donations; no other
-            payment methods are available at the moment, unfortunately.
+            all the difference (literally). I accept donations via Stripe and crypto. Choose the method that works best for you.
           </p>
+
+          <h3 class="dark:text-gray-200 mb-2">Donate via Stripe</h3>
+          <a
+            href="https://donate.stripe.com/fZu14m3c01j24KB2Zm4gg00"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block bg-blue-500 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-800 text-white font-bold py-2 px-4 rounded transition duration-200 mb-8">
+            Donate with Stripe
+          </a>
 
           <h3 class="dark:text-gray-200 mb-2">By donating you are supporting:</h3>
           <ul class="dark:text-gray-300">
